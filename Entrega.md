@@ -44,15 +44,19 @@ OpenMP
 A partir do programa `pthreads_dotprod.c` foi desenvolvido o programa `omp_dotprod.c`. Os respectivos tempos de execução se encontram no arquivo [results.csv](https://github.com/elc139/t2-thalissonforte/blob/master/results.csv). Abaixo a relação de aceleração entre 1 e mais threads:<br><br>
 
 - Primeiro teste:<br>
-      <p>1 thread / 2 threads = 14090460 / 7846754 = 1.7957
-      <p>1 thread / 4 threads = 14090460 / 6943146 = 2.0294
-      <p>1 thread / 8 threads = 14090460 / 6623463 = 2.1273
+      <p>1 thread / 2 threads = 17230187 / 9352278 = 1.8423
+      <p>1 thread / 4 threads = 17230187 / 9091313 = 1.8952
+      <p>1 thread / 8 threads = 17230187 / 9170108 = 1.8789
        
 - Segundo teste:<br>
-      <p>1 thread / 2 threads = 28716697 / 15919209 = 1.8039
-      <p>1 thread / 4 threads = 28716697 / 13139057 = 2.1856
-      <p>1 thread / 8 threads = 28716697 / 12968190 = 2.2144
+      <p>1 thread / 2 threads = 40176823 / 20129256 = 1.9959
+      <p>1 thread / 4 threads = 40176823 / 18717602 = 2.1464
+      <p>1 thread / 8 threads = 40176823 / 19268960 = 2.0850
 
+- Terceiro teste:<br>
+      <p>1 thread / 2 threads = 69891939 / 37811266 = 1.8484
+      <p>1 thread / 4 threads = 69891939 / 36691284 = 1.9048
+      <p>1 thread / 8 threads = 69891939 / 36890741 = 1.8945
 
 
 ### Referências
