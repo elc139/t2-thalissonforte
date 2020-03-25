@@ -35,7 +35,7 @@ PThreads
     <div align="center"><img src="https://raw.githubusercontent.com/elc139/t2-thalissonforte/master/TabelaDados.png"></div>
 
 5. Explique as diferenças entre pthreads_dotprod.c e pthreads_dotprod2.c. Com as linhas removidas, o programa está correto?
-    - O código apresentado em `pthreads_dotprod2.c` possui a técnica de exclusão mútua sobre a variável `dotdata.c` já que ambas as threads podem realizar operações sobre aquela área de forma simultanea, podendo incorrer em erro. Porém, ainda assim, o código apresentado em `threads_dotprod.c` segue sendo válido já que essa mesma variável não é utilizada para outros fins a não ser de exibição no final de toda a execução. E também, o incremento feito nessa variável não depende da ordem das threads para ser contabilizada, o que mantém o código correto.
+    - O código apresentado em `pthreads_dotprod.c` possui a técnica de exclusão mútua sobre a variável `dotdata.c` já que ambas as threads podem realizar operações sobre aquela área de forma simultanea, podendo incorrer em erro. Porém, ainda assim, o código apresentado em `threads_dotprod2.c` segue sendo válido já que essa mesma variável não é utilizada para outros fins a não ser de exibição no final de toda a execução. E também, o incremento feito nessa variável não depende da ordem das threads para ser contabilizada, o que mantém o código correto.
 
 
 OpenMP
