@@ -8,7 +8,42 @@ Nome: <b>Thalisson Forte</b><br>
 PThreads
 -----------------------------
 1. *Explique como se encontram implementadas as 4 etapas de projeto: particionamento, comunicação, aglomeração, mapeamento:*
-    - asdasds ads asd asd asd as
+    #### Particionamento:
+    O particionamento pode ser vista no trecho abaixo, onde para cada thread é designado um espaço para realizar o seu trabalho após identificar a oportunidade de paralelismo.
+    ```c
+       long offset = (long) arg;   
+       int wsize = dotdata.wsize;
+       int start = offset*wsize;
+       int end = start + wsize;
+       for(k = 0; k < dotdata.repeat; k++){
+             mysum = 0.0;
+             for (i = start; i < end ; i++){
+                mysum += (a[i] * b[i]);
+             }
+       }
+    ```
+    
+    #### Comunicação:
+    A comunicação pode ser vista abaixo quando as threads utilizam a variável `dotdata.c` já que esta é uma variável compartilhada.
+    ```c
+        pthread_mutex_lock (&mutexsum);
+        dotdata.c += mysum;
+        pthread_mutex_unlock (&mutexsum);
+    ```
+    
+    #### Aglomeração:
+    A aglomeração ocorre quando juntamos os resultados encontrados pelas threads em apenas um lugar.
+    ```c
+        dotdata.c += mysum;
+    ```
+    
+    #### Mapeamento:
+    O mapeamento realiza a divisão do trabalho entre as threads para que haja uma quantia de trabalho justa para cada thread.
+    ```c
+        long offset = (long) arg;   
+        int start = offset*wsize;
+    ```
+    
 
 2. *Considerando o tempo (em microssegundos) mostrado na saída do programa, qual foi a aceleração (speedup) com o uso de threads?*
     - O teste foi feito variando a quantidade de threads e adaptando o tamanho do teste para padronizar o resultado e realizar a comparação (resultados no arquivo [results.csv](https://github.com/elc139/t2-thalissonforte/blob/master/results.csv)).<br><br>
